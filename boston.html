@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Greater Boston Properties | Foxcroft Inc.</title>
+  <meta name="description" content="Foxcroft Inc. residential, office, and retail properties across Greater Boston and surrounding communities." />
+  <link rel="canonical" href="https://www.foxcroftinc.com/boston.html" />
+  <link rel="icon" type="image/png" href="favicon-white-512.png" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Foxcroft Inc." />
+  <meta property="og:title" content="Greater Boston Properties | Foxcroft Inc." />
+  <meta property="og:description" content="Residential, office, and retail properties across Boston, the South Shore, and Greater Boston, managed and owned by Foxcroft." />
+  <meta property="og:url" content="https://www.foxcroftinc.com/boston.html" />
+  <meta property="og:image" content="https://www.foxcroftinc.com/FC-OG.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" /></noscript>
+
+  <style>
+    :root {
+      --ink:        #1c1b17;
+      --ink-soft:   #322f29;
+      --ivory:      #f8f5ef;
+      --cream:      #efe9df;
+      --stone:      #d8cfc0;
+      --taupe:      #6b6357;
+      --brass:      #c8c2bb;
+      --brass-deep: #6b6357;
+      --green:      #06180E;
+      --green-deep: #06180E;
+      --forest:     #06180E;
+
+
+      --maxw: 1240px;
+      --gut: clamp(22px, 5vw, 64px);
+      --ease: cubic-bezier(.22,.61,.36,1);
+
+      --serif: "Marcellus", Georgia, "Times New Roman", serif;
+      --sans:  "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    a, button, label, input, textarea, select { touch-action: manipulation; }
+    html { scroll-behavior: auto; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      font-family: var(--sans); color: var(--ink); background: var(--ivory);
+      line-height: 1.7; font-weight: 400; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: var(--serif); font-weight: 400; line-height: 1.14; text-wrap: balance; }
+    p { text-wrap: pretty; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 1px; }
+    .page-hero a:focus-visible, footer a:focus-visible, footer button:focus-visible,
+    .mobile-menu a:focus-visible, .mobile-menu button:focus-visible,
+    header:not(.scrolled) .nav-links a:focus-visible, .menu-toggle:focus-visible { outline-color: #fff; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+    }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--gut); }
+    .skip-link { position: absolute; left: 16px; top: -60px; z-index: 200; background: var(--ink); color: #fff; padding: 12px 20px; font-family: var(--sans); font-size: 13px; letter-spacing: .08em; border-radius: 0 0 4px 4px; transition: top .2s var(--ease); }
+    .skip-link:focus { top: 0; outline: 2px solid #fff; outline-offset: 2px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+    .eyebrow {
+      font-family: var(--sans); font-size: 12.5px; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--taupe); font-weight: 600;
+      display: inline-block; margin-bottom: 22px;
+    }
+
+    /* ---- Header ---- */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: var(--ivory); padding: 12px 0; 
+      box-shadow: 0 10px 40px rgba(20,19,15,0.08);
+      transition: padding .5s var(--ease);
+    }
+    header .bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; line-height: 0; }
+    .brand-logo { display: block; height: 38px; width: auto; }
+    nav.main { display: flex; align-items: center; gap: 38px; }
+    .nav-links { display: flex; align-items: center; gap: 34px; list-style: none; }
+    .nav-links > li > a {
+      font-family: var(--sans); font-size: 13px; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--ink); font-weight: 400;
+      padding: 8px 0; position: relative; transition: color .35s var(--ease);
+    }
+    .nav-links > li > a::after {
+      content: ""; position: absolute; left: 0; bottom: 0; height: 1px; width: 0;
+      background: var(--brass); transition: width .4s var(--ease);
+    }
+    .nav-links > li > a:hover::after { width: 100%; }
+    .nav-cta {
+      font-family: var(--sans); font-size: 11px; letter-spacing: .17em; text-transform: uppercase;
+      font-weight: 500; padding: 5px 18px; background: var(--green); color: #fff;
+      transition: background .4s var(--ease); white-space: nowrap; flex-shrink: 0;
+      margin-left: 16px; border-radius: 0; display: inline-flex; align-items: center;
+    }
+    .nav-cta__arrow {
+      display: inline-block; width: 0; overflow: hidden; opacity: 0; margin-right: 0;
+      transition: width .35s var(--ease), opacity .28s var(--ease), margin-right .35s var(--ease);
+      font-size: 13px; line-height: 1;
+    }
+    .nav-cta:hover .nav-cta__arrow { width: 13px; opacity: 1; margin-right: 5px; }
+    .nav-cta:hover { background: #fff; color: var(--green); }
+    .menu-toggle { display: none; flex-direction: column; justify-content: center; gap: 6px; background: none; border: 0; cursor: pointer; padding: 11px 9px; min-width: 44px; min-height: 44px; }
+    .menu-toggle span { width: 26px; height: 1.6px; background: var(--ink); transition: all .4s var(--ease); }
+
+    /* ---- Page hero ---- */
+    .page-hero {
+      padding: 160px 0 80px; background: var(--ink); color: #fff;
+      position: relative; overflow: hidden;
+    }
+    .page-hero__bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .page-hero__bg img {
+      width: 100%; height: 108%; object-fit: cover; position: absolute; left: 0; top: -4%;
+      filter: brightness(.38) saturate(.8); transform: translate3d(0, var(--pY, 0px), 0);
+    }
+    .page-hero__inner { position: relative; z-index: 1; max-width: 820px; }
+    .page-hero .eyebrow { color: rgba(255,255,255,.7); }
+    .page-hero h1 { font-size: clamp(38px, 6vw, 76px); line-height: 1.06; color: #fff; margin-bottom: 18px; }
+    .page-hero p { font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,255,.8); font-weight: 300; max-width: 520px; }
+
+    /* ---- Properties grid ---- */
+    .properties { padding: clamp(80px, 10vw, 130px) 0; background: var(--ivory); }
+    .properties .section-head { max-width: 680px; margin: 0 0 56px; }
+    .properties .section-head h2 { font-size: clamp(30px, 4vw, 48px); margin-bottom: 14px; }
+    .properties .section-head p { color: var(--taupe); font-size: 16px; }
+
+    .prop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(340px, 100%), 1fr));
+      gap: 32px;
+    }
+
+    /* Boston block: desktop bento — the photo card (1895 Centre) is a tall
+       feature spanning both rows; the two short, one-sentence East Boston cards
+       (row 1) align to the top so they stay compact instead of stretching to an
+       awkward full height. The medium cards below fill their row normally. */
+    @media (min-width: 900px) {
+      #boston .prop-grid { grid-template-columns: repeat(3, 1fr); }
+      #boston .prop-grid > :first-child { grid-row: span 2; }
+      #boston .prop-grid > :nth-child(2),
+      #boston .prop-grid > :nth-child(3) { align-self: start; }
+    }
+
+    /* placeholder state — swap out once cards are added */
+    .prop-placeholder {
+      grid-column: 1 / -1;
+      padding: 80px 0;
+      text-align: center;
+      color: var(--taupe);
+      font-size: 15px;
+      letter-spacing: .04em;
+      border-top: 1px solid var(--stone);
+      border-bottom: 1px solid var(--stone);
+    }
+
+    /* no-photo card variant */
+    .prop-card--text .prop-card__accent {
+      height: 5px; background: var(--green);
+      transition: background .4s var(--ease);
+    }
+    .prop-card--text:hover .prop-card__accent { background: var(--brass); }
+
+    /* property card */
+    .prop-card {
+      background: #fff; border: 1px solid var(--stone);
+      transition: box-shadow .4s var(--ease), transform .4s var(--ease);
+      display: flex; flex-direction: column;
+    }
+    .prop-card:hover { box-shadow: 0 20px 60px rgba(20,19,15,0.1); transform: translateY(-4px); }
+    .prop-card__img { aspect-ratio: 4/3; overflow: hidden; position: relative; }
+    .prop-card__img img { position: absolute; left: 0; top: -4%; width: 100%; height: 108%; object-fit: cover; transform: translate3d(0, var(--pY, 0px), 0); transition: filter 1s var(--ease); }
+    .prop-card:hover .prop-card__img img { filter: brightness(1.05); }
+    .prop-card__body { padding: 28px 30px 32px; flex: 1; display: flex; flex-direction: column; }
+    .prop-card__loc { font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 8px; }
+    .prop-card__body h3 { font-size: 22px; margin-bottom: 10px; }
+    .prop-card__body p { font-size: 14.5px; color: var(--taupe); line-height: 1.65; flex: 1; margin-bottom: 22px; }
+    .prop-card__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+    .prop-card__tag {
+      font-size: 10px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--ink); border: 1px solid var(--stone); padding: 5px 11px;
+    }
+    .prop-card__cta {
+      font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--brass-deep); font-weight: 500; display: inline-flex; align-items: center; gap: 10px;
+      margin-top: auto; transition: color .3s var(--ease);
+    }
+    .prop-card__cta::after { content: ""; display: inline-block; width: 28px; height: 1px; background: var(--brass); transition: width .4s var(--ease); }
+    .prop-card:hover .prop-card__cta { color: var(--ink); }
+    .prop-card:hover .prop-card__cta::after { width: 44px; }
+
+    /* ---- Town jump nav + town sections ---- */
+    .town-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: clamp(44px, 6vw, 70px); }
+    .town-nav a {
+      font-family: var(--sans); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ink); border: 1px solid var(--stone); padding: 9px 16px;
+      transition: background .3s var(--ease), color .3s var(--ease), border-color .3s var(--ease);
+    }
+    .town-nav a:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
+    .town-block { margin-bottom: clamp(56px, 8vw, 96px); scroll-margin-top: 96px; }
+    .town-block:last-of-type { margin-bottom: 0; }
+    .town-head { margin-bottom: 32px; }
+    .town-head .eyebrow { margin-bottom: 10px; }
+    .town-head h2 { font-family: var(--serif); font-size: clamp(26px, 3.2vw, 40px); }
+    .town-head p { color: var(--taupe); font-size: 15px; max-width: 560px; margin-top: 10px; }
+
+    /* ---- CTA strip ---- */
+    .cta-strip { background: var(--green); color: #fff; padding: clamp(60px, 8vw, 100px) 0; text-align: center; }
+    .cta-strip h2 { font-size: clamp(26px, 3.5vw, 42px); margin-bottom: 14px; }
+    .cta-strip p { color: rgba(255,255,255,.75); max-width: 480px; margin: 0 auto 32px; }
+    .btn {
+      display: inline-block; font-family: var(--sans); font-size: 12.5px; letter-spacing: .22em;
+      text-transform: uppercase; font-weight: 500; padding: 16px 34px;
+      border: 1px solid var(--brass); color: var(--ink); background: transparent; cursor: pointer;
+      transition: background .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
+    }
+    .btn:hover { background: var(--brass); color: #fff; }
+    .btn--ghost-light { color: #fff; border-color: rgba(255,255,255,.55); }
+    .btn--ghost-light:hover { background: var(--ivory); color: var(--ink); border-color: var(--ivory); }
+
+    /* ---- Footer ---- */
+    footer.foot { background: var(--ink); color: rgba(255,255,255,.76); }
+    .foot__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; padding: 70px 0 50px; border-bottom: 1px solid rgba(255,255,255,.1); flex-wrap: wrap; }
+    .foot .brand-logo { filter: brightness(0) invert(1); height: 50px; }
+    .foot__col h3 { color: var(--ivory); font-size: 17px; margin-bottom: 18px; letter-spacing: .05em; font-weight: 500; }
+    .foot__col ul { list-style: none; columns: 2; column-gap: 30px; }
+    .foot__col ul li { font-size: 14px; padding: 4px 0; letter-spacing: .03em; }
+    .foot__mission { max-width: 340px; font-size: 14px; line-height: 1.8; }
+    .foot__bottom { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; font-size: 12px; letter-spacing: .05em; flex-wrap: wrap; gap: 10px; }
+    .foot__bottom .brass { color: var(--brass); }
+
+    /* ---- Mobile menu ---- */
+    .mobile-menu {
+      position: fixed; inset: 0; background: var(--ink); z-index: 150; transform: translateY(-100%);
+      transition: transform .55s var(--ease); display: flex; flex-direction: column;
+      padding: calc(100px + env(safe-area-inset-top, 0px)) 40px calc(40px + env(safe-area-inset-bottom, 0px)); overflow-y: auto;
+    }
+    .mobile-menu.open { transform: translateY(0); visibility: visible; }
+    .mobile-menu a { color: #fff; font-family: var(--serif); font-size: 30px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .mobile-close { position: absolute; top: calc(22px + env(safe-area-inset-top, 0px)); right: 26px; color: var(--ivory); font-size: 34px; font-weight: 300; cursor: pointer; line-height: 1; background: none; border: 0; padding: 6px 10px; min-width: 44px; min-height: 44px; }
+    .mobile-contact { margin-top: auto; padding-top: 30px; }
+    .mobile-contact a { font-family: var(--sans); font-size: 15px; border: 0; color: var(--brass); padding: 4px 0; }
+
+    @media (max-width: 1024px) {
+      nav.main .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .menu-toggle { display: flex; }
+    }
+    @media (max-width: 720px) {
+      .page-hero { padding: 140px 0 60px; }
+      .town-nav { gap: 8px; }
+      .town-nav a { padding: 8px 12px; font-size: 10px; }
+      .prop-card__body { padding: 22px 20px 26px; }
+    }
+    @media (max-width: 560px) {
+      .prop-grid { grid-template-columns: 1fr; }
+      .page-hero { padding: 110px 0 44px; }
+      .mobile-menu a { font-size: 26px; }
+      .mobile-menu { padding: calc(90px + env(safe-area-inset-top, 0px)) 28px calc(40px + env(safe-area-inset-bottom, 0px)); }
+      .foot__col ul { columns: 1; }
+      .foot__top { padding: 44px 0 30px; gap: 20px 32px; }
+      .foot__bottom { flex-direction: column; align-items: flex-start; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header id="header">
+    <div class="wrap bar">
+      <a href="index.html" class="brand" aria-label="Foxcroft Inc. home">
+        <img class="brand-logo" src="Frame%206.svg" alt="Foxcroft Inc." />
+      </a>
+      <nav class="main">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#portfolio">Properties</a></li>
+          <li><a href="leasing.html">Leasing</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="careers.html">Careers</a></li>
+        </ul>
+        <a href="index.html#contact" class="nav-cta"><span class="nav-cta__arrow" aria-hidden="true">→</span>Contact</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" type="button" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a>
+    <a href="index.html#portfolio">Properties</a>
+    <a href="leasing.html">Leasing</a>
+    <a href="index.html#gallery">Gallery</a>
+    <a href="index.html#about">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="index.html#contact">Contact</a>
+    <div class="mobile-contact">
+      <a href="tel:+1-617-770-0500">617-770-0500</a><br>
+      <a href="mailto:info@foxcroftinc.com">info@foxcroftinc.com</a>
+    </div>
+  </div>
+
+  <!-- Page hero -->
+  <main id="main" tabindex="-1" style="outline:none;">
+  <section class="page-hero">
+    <div class="page-hero__bg">
+      <img src="Boston%20Skyline%20Painting.webp" alt="Boston skyline" fetchpriority="high" decoding="async" />
+    </div>
+    <div class="wrap page-hero__inner">
+      <span class="eyebrow">Massachusetts</span>
+      <h1>Massachusetts Properties</h1>
+      <p>Residential, office, and retail spaces across Boston, Quincy, Hingham, Kingston, Brockton, Easton, Northborough, and Watertown.</p>
+    </div>
+  </section>
+
+  <!-- Properties -->
+  <section class="properties">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Our Portfolio</span>
+        <h2>Properties Across Massachusetts</h2>
+        <p>Well-located residential, office, and retail properties owned and managed by Foxcroft. Jump to a community below.</p>
+      </div>
+
+      <nav class="town-nav" aria-label="Jump to a community">
+        <a href="#boston">Boston</a>
+        <a href="#watertown">Watertown</a>
+        <a href="#quincy">Quincy</a>
+        <a href="#hingham">Hingham</a>
+        <a href="#kingston">Kingston</a>
+        <a href="#brockton">Brockton</a>
+        <a href="#easton">Easton</a>
+        <a href="#northborough">Northborough</a>
+      </nav>
+
+      <!-- ===== Boston ===== -->
+      <div class="town-block" id="boston">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Boston</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card">
+            <div class="prop-card__img">
+              <img src="property-images/QL-boston.webp" alt="1895 Centre Street, West Roxbury" loading="lazy" decoding="async" />
+            </div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">West Roxbury</span>
+              <h3>1895 Centre Street</h3>
+              <p>Two-story brick retail and office building includes tenant parking lot, as well as a municipal parking lot adjacent to the building. A fantastic location near thriving neighborhoods and major roadways, strategically located in the heart of West Roxbury's retail market. Centre Street connects traffic from nearby Newton and Brookline off the VFW Parkway to the Dedham/Westwood area.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">East Boston</span>
+              <h3>82–84 Falcon Street</h3>
+              <p>Five newly-renovated apartments in eclectic East Boston.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">East Boston</span>
+              <h3>145 Lexington Street</h3>
+              <p>Four apartments located right in the heart of Eagle Hill in eclectic East Boston.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Boston</span>
+              <h3>495 Beacon Street <span style="font-size:.75em;color:var(--taupe)">Unit C-1</span></h3>
+              <p>Under development for two condominium units located on Beacon Street right near the Mass Ave Bridge. If you attended Boston University or MIT, your memories of Crossroads are deep and vivid.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">South Boston</span>
+              <h3>644–646 East 5th Street</h3>
+              <p>Two beautiful, newly developed units in the heart of South Boston. Each unit has two bedrooms and 2.5 bathrooms. The top unit has two decks, one in front and one on the roof; the bottom unit has a backyard.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ===== Watertown ===== -->
+      <div class="town-block" id="watertown">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Watertown</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Watertown</span>
+              <h3>84 Arsenal Street</h3>
+              <p>Great convenience / automotive service location on highly-travelled Arsenal Street, one of the most vibrant arteries of Watertown.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ===== Quincy ===== -->
+      <div class="town-block" id="quincy">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Quincy</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Quincy</span>
+              <h3>45 Prospect Hill Street</h3>
+              <p>Six townhouse-style apartments, each with a one-car garage and an additional off-street parking space, located on a quiet side street with an attractively landscaped lot.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Quincy</span>
+              <h3>2–16 Hobart Street</h3>
+              <p>Located right on one of the busiest arteries of Quincy, next to Wendy's, Marshalls, and Ocean State Job Lot. A great retail location.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Quincy</span>
+              <h3>132–150 East Howard Street</h3>
+              <p>Features an Irish convenience store, barber shop, and additional retail space.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Quincy</span>
+              <h3>29 Packards Lane</h3>
+              <p>Beautifully redeveloped three-family with close access to Quincy Center and the Red Line. The third unit, recently remodeled, is an oversized four-bedroom, three-bath apartment with an outside deck and garage parking.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ===== Hingham ===== -->
+      <div class="town-block" id="hingham">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Hingham</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card">
+            <div class="prop-card__img">
+              <img src="property-images/7.9-Central-Hingham-1.webp" alt="7–9 Central Street, Hingham" loading="lazy" decoding="async" />
+            </div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Hingham</span>
+              <h3>7–9 Central Street</h3>
+              <p>Historical building being redeveloped for a dental practice and private offices.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card">
+            <div class="prop-card__img">
+              <img src="property-images/207.225-Lincoln-Hingham-4.webp" alt="207–225 Lincoln Street, Hingham" loading="lazy" decoding="async" />
+            </div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Hingham</span>
+              <h3>207–225 Lincoln Street</h3>
+              <p>Absolutely unique frontage on busy Route 3A with abundant parking for your customers. Great access with two-foot-wide curb cuts located on either end of the center.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card">
+            <div class="prop-card__img">
+              <img src="property-images/207.225-Lincoln-Hingham-11.webp" alt="184 Lincoln Street, Hingham" loading="lazy" decoding="async" />
+            </div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Hingham</span>
+              <h3>184 Lincoln Street</h3>
+              <p>A variety of stores and services that cater to the local community.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ===== Kingston ===== -->
+      <div class="town-block" id="kingston">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Kingston</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card">
+            <div class="prop-card__img">
+              <img src="property-images/Port-B-112.114-Main-King.webp" alt="112–114 Main Street, Kingston" loading="lazy" decoding="async" />
+            </div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Kingston</span>
+              <h3>112–114 Main Street</h3>
+              <p>Located ¼ mile off Route 3 at Exit 9, making this building accessible to the local community and Cape Cod travelers. Spacious parking and a nicely landscaped lot make it a great place for your business.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+          <a href="index.html#contact" class="prop-card">
+            <div class="prop-card__img">
+              <img src="property-images/House-116-Main-King.webp" alt="116 Main Street, Kingston" loading="lazy" decoding="async" />
+            </div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Kingston</span>
+              <h3>116 Main Street</h3>
+              <p>Located next to Kingston Plaza, this beautifully renovated antique colonial house, with three bedrooms and two bathrooms, sits on a 28,000-square-foot lot.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ===== Brockton ===== -->
+      <div class="town-block" id="brockton">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Brockton</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Brockton</span>
+              <h3>1675 Main Street</h3>
+              <p>Ideally located at the intersection of Routes 123 and 138, a prominently exposed neighborhood center.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ===== Easton ===== -->
+      <div class="town-block" id="easton">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Easton</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card">
+            <div class="prop-card__img">
+              <img src="property-images/Easton-landscape-005.webp" alt="566 Washington Street, Easton" loading="lazy" decoding="async" />
+            </div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Easton</span>
+              <h3>566 Washington Street</h3>
+              <p>Ideally located at the intersection of Routes 123 and 138, a prominently exposed neighborhood center, home to a state-of-the-art laundromat, dry cleaner, nutrition center, and physical therapy provider.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- ===== Northborough ===== -->
+      <div class="town-block" id="northborough">
+        <div class="town-head">
+          <span class="eyebrow">Massachusetts</span>
+          <h2>Northborough</h2>
+        </div>
+        <div class="prop-grid">
+
+          <a href="index.html#contact" class="prop-card prop-card--text">
+            <div class="prop-card__accent"></div>
+            <div class="prop-card__body">
+              <span class="prop-card__loc">Northborough</span>
+              <h3>300 West Main Street</h3>
+              <p>A 40,475-square-foot office park in a beautiful, pastoral setting, well-landscaped and surrounded by grass, trees, and shrubbery. Home to Fox Meadow Executive Center, offering full-service office space with all professional amenities, plus parking for 174 vehicles. Minutes from Northborough Crossing and downtown off Route 20, well-situated near Shrewsbury with easy access to Routes 9 and 495.</p>
+              <span class="prop-card__cta">Inquire</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="wrap">
+      <h2>Interested in a space?</h2>
+      <p>Reach out directly and you'll speak with a decision-maker, not a call center.</p>
+      <a href="index.html#contact" class="btn btn--ghost-light">Contact Foxcroft</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <div class="foot__top">
+        <div>
+          <a href="index.html" class="brand" aria-label="Foxcroft Inc. home">
+            <img class="brand-logo" src="Frame%206.svg" alt="Foxcroft Inc." />
+          </a>
+          <p class="foot__mission" style="margin-top:22px;">Foxcroft's mission is to pursue real estate investment, development and management opportunities responsibly and with integrity for the benefit of our investors, partners, tenants, employees and company.</p>
+        </div>
+        <div class="foot__col">
+          <h3>Our Regions</h3>
+          <ul>
+            <li>Boston</li><li>Brockton</li><li>Easton</li><li>Hingham</li>
+            <li>Hinesville, GA</li><li>Holbrook</li><li>Kingston</li>
+            <li>Northborough</li><li>Quincy</li><li>Rochester, NH</li>
+            <li>Watertown</li><li>West Roxbury</li>
+          </ul>
+        </div>
+        <div class="foot__col">
+          <h3>Contact</h3>
+          <p style="font-size:13.5px;line-height:1.9;">
+            134 East Howard St.<br>Quincy, MA 02169<br>
+            <a href="tel:+1-617-770-0500" style="color:var(--brass)">617-770-0500</a><br>
+            <a href="mailto:info@foxcroftinc.com" style="color:var(--brass)">info@foxcroftinc.com</a>
+          </p>
+        </div>
+      </div>
+      <div class="foot__bottom">
+        <span>© <span id="year">2026</span> Foxcroft Inc. All rights reserved.</span>
+        <span class="brass">Investment · Development · Management</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script>
+    var lenis = new Lenis({ lerp: 0.1 });
+    (function raf(time) { lenis.raf(time); requestAnimationFrame(raf); })(0);
+
+    const mm = document.getElementById('mobileMenu');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileClose = document.getElementById('mobileClose');
+    const openMenu = () => { mm.classList.add('open'); menuToggle.setAttribute('aria-expanded', 'true'); mobileClose.focus(); };
+    const closeMenu = () => { mm.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); };
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-controls', 'mobileMenu');
+    menuToggle.addEventListener('click', openMenu);
+    mobileClose.addEventListener('click', () => { closeMenu(); menuToggle.focus(); });
+    mm.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mm.classList.contains('open')) { closeMenu(); menuToggle.focus(); } });
+    (function () {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      var els = Array.from(document.querySelectorAll('.page-hero__bg img, .prop-card__img img'));
+      if (!els.length) return;
+      var ticking = false;
+      function update() {
+        var vh = window.innerHeight, vpC = vh / 2;
+        for (var i = 0; i < els.length; i++) {
+          var el = els[i], r = el.getBoundingClientRect();
+          if (r.bottom < -80 || r.top > vh + 80) continue;
+          var center = r.top + r.height / 2;
+          var y = ((vpC - center) / vpC) * (r.height * 0.03);
+          el.style.setProperty('--pY', y.toFixed(1) + 'px');
+        }
+        ticking = false;
+      }
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll, { passive: true });
+      update();
+    })();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

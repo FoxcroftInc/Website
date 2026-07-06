@@ -1,0 +1,28 @@
+# OS / editor junk
+.DS_Store
+.claude/
+
+# Dev/personal artifacts — must not ship to the client repo
+index 2.html
+index.backup-typography.html
+cycling-hero-text.html
+IOS-LOADER-CHIN-BUG.md
+deploy/
+
+# Unused/duplicate images (not referenced by any live page)
+# Leading slash = repo root only, so this doesn't shadow property-images/Rochester1.webp (which IS used)
+/Boston Skyline copy.jpg
+/Boston Skyline copy 2.jpg
+/Boston Skyline.jpg
+/Frame 5.svg
+/Frame 8.png
+/Group 12.svg
+/Rochester1.webp
+/ibuki-tsubo-XV81dRUMzpo-unsplash.jpg
+/og-image.jpg
+/Icon*
+
+# Licensed font files not used in production CSS
+PPEditorialNew-Italic.otf
+PPEditorialNew-Regular.otf
+PPEditorialNew-Ultrabold.otf
