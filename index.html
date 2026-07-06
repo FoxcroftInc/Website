@@ -1624,13 +1624,30 @@
       }
     });
 
-    // ---- Contact form (demo) ----
+    // ---- Contact form → opens a pre-filled email to the main inbox ----
     document.getElementById('contactForm').addEventListener('submit', (e) => {
       e.preventDefault();
       const note = document.getElementById('formNote');
-      note.textContent = 'Thank you. Your inquiry has been received and we will be in touch shortly.';
+      const val = (id) => { const el = document.getElementById(id); return el ? el.value.trim() : ''; };
+      const fn = val('fn'), ln = val('ln'), em = val('em'), ph = val('ph'), prop = val('prop'), msg = val('msg');
+      if (!fn || !ln || !em) {
+        note.textContent = 'Please add your name and email so we can reach you.';
+        note.style.color = 'var(--taupe)';
+        return;
+      }
+      const name = (fn + ' ' + ln).trim();
+      const subject = 'Property Inquiry - ' + name + (prop ? ' (' + prop + ')' : '');
+      const body =
+        'Name: ' + name + '\n' +
+        'Email: ' + em + '\n' +
+        'Phone: ' + (ph || '-') + '\n' +
+        'Property of Interest: ' + (prop || '-') + '\n\n' +
+        'Message:\n' + (msg || '-');
+      window.location.href = 'mailto:info@foxcroftinc.com'
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+      note.textContent = 'Opening your email app. Please hit send. If nothing opened, email us directly at info@foxcroftinc.com.';
       note.style.color = 'var(--taupe)';
-      e.target.reset();
     });
 
     // ---- Back to top (visibility handled by the consolidated scroll handler above) ----
