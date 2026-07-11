@@ -800,7 +800,10 @@
     .mm-properties[aria-expanded="true"] .mm-caret { transform: rotate(225deg); }
     .mm-sub { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s var(--ease); }
     .mm-sub.open { grid-template-rows: 1fr; }
-    .mm-sub__inner { overflow: hidden; }
+    /* flex column: without this, the <a> children (inline by default) wrap
+       side-by-side like words instead of stacking one per line — the "words
+       instead of a list" bug */
+    .mm-sub__inner { overflow: hidden; display: flex; flex-direction: column; }
     .mobile-menu .mm-state { font-size: 18px; padding: 12px 0 6px 28px; color: rgba(255,255,255,.6); font-family: var(--sans); letter-spacing: .1em; border-bottom: 0; }
     .mobile-menu a.mm-town { font-family: var(--sans); font-size: 14px; letter-spacing: .08em; padding: 7px 0 7px 48px; color: rgba(255,255,255,.45); border-bottom: 0; }
     .mobile-menu a.mm-town:hover { color: #fff; }
