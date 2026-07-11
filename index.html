@@ -1469,8 +1469,8 @@
     const mm = document.getElementById('mobileMenu');
     const menuToggle = document.getElementById('menuToggle');
     const mobileClose = document.getElementById('mobileClose');
-    const openMenu = () => { mm.classList.add('open'); menuToggle.setAttribute('aria-expanded', 'true'); mobileClose.focus(); };
-    const closeMenu = () => { mm.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); };
+    const openMenu = () => { mm.classList.add('open'); menuToggle.setAttribute('aria-expanded', 'true'); mobileClose.focus(); document.body.style.overflow = 'hidden'; };
+    const closeMenu = () => { mm.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-controls', 'mobileMenu');
     menuToggle.addEventListener('click', openMenu);
