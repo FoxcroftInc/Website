@@ -100,6 +100,54 @@
       background: var(--brass); transition: width .4s var(--ease);
     }
     .nav-links > li > a:hover::after { width: 100%; }
+    /* Properties dropdown */
+    .has-dropdown { position: relative; }
+    .dropdown {
+      position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+      min-width: 190px; padding: 10px 0 10px;
+      background: var(--ivory); box-shadow: 0 12px 40px rgba(0,0,0,.1);
+      opacity: 0; visibility: hidden; pointer-events: none;
+      translate: 0 6px;
+      transition: opacity .3s var(--ease), translate .3s var(--ease), visibility .3s;
+    }
+    .has-dropdown:hover .dropdown,
+    .has-dropdown:focus-within .dropdown {
+      opacity: 1; visibility: visible; pointer-events: auto; translate: 0 0;
+    }
+    .dropdown::before {
+      content: ""; position: absolute; top: 12px; left: 50%; transform: translateX(-50%);
+      border: 5px solid transparent; border-bottom-color: var(--ivory);
+      border-top: 0; width: 0; height: 0;
+    }
+    .dropdown a {
+      display: block; padding: 10px 22px;
+      font-size: 11px; letter-spacing: .16em; text-transform: uppercase;
+      color: var(--taupe); font-weight: 400;
+      transition: color .25s var(--ease), padding-left .25s var(--ease);
+      position: relative;
+    }
+    .dropdown a::after { display: none; }
+    .dropdown a:hover { color: var(--ink); padding-left: 28px; }
+    .dropdown a + a { border-top: 1px solid var(--stone); }
+    .dropdown--mega { left: 0; transform: none; min-width: 380px; padding: 22px 28px; display: flex; gap: 32px; }
+    .dropdown--mega::before { left: 26px; transform: none; }
+    .dd-col { display: flex; flex-direction: column; min-width: 146px; }
+    .dropdown--mega a { padding: 7px 0; text-transform: none; letter-spacing: .03em; font-size: 13px; }
+    .dropdown--mega a + a { border-top: 0; }
+    .dropdown--mega a:hover { padding-left: 6px; }
+    .dd-state {
+      color: var(--ink); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
+      padding: 2px 0 10px; margin-bottom: 6px; border-bottom: 1px solid var(--stone);
+    }
+    .dd-state:hover { color: var(--brass); padding-left: 0; }
+    .dd-state ~ .dd-state { margin-top: 20px; }
+    .dd-caret {
+      display: inline-block; width: 6px; height: 6px;
+      border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
+      transform: rotate(45deg) translateY(-6px); margin-left: 5px; vertical-align: middle;
+      transition: transform .3s var(--ease);
+    }
+    .has-dropdown:hover .dd-caret { transform: rotate(225deg) translateY(2px); }
     .nav-cta {
       font-family: var(--sans); font-size: 11px; letter-spacing: .17em; text-transform: uppercase;
       font-weight: 500; padding: 5px 18px; background: var(--green); color: #fff;
@@ -241,7 +289,28 @@
       <nav class="main">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#portfolio">Properties</a></li>
+          <li class="has-dropdown">
+            <a href="index.html#portfolio">Properties <span class="dd-caret" aria-hidden="true"></span></a>
+            <div class="dropdown dropdown--mega" role="group" aria-label="Properties by location">
+              <div class="dd-col">
+                <a class="dd-state" href="boston.html">Massachusetts</a>
+                <a href="boston.html#boston">Boston</a>
+                <a href="boston.html#watertown">Watertown</a>
+                <a href="boston.html#quincy">Quincy</a>
+                <a href="boston.html#hingham">Hingham</a>
+                <a href="boston.html#kingston">Kingston</a>
+                <a href="boston.html#brockton">Brockton</a>
+                <a href="boston.html#easton">Easton</a>
+                <a href="boston.html#northborough">Northborough</a>
+              </div>
+              <div class="dd-col">
+                <a class="dd-state" href="new-hampshire.html">New Hampshire</a>
+                <a href="new-hampshire.html#rochester">Rochester</a>
+                <a class="dd-state" href="georgia.html">Georgia</a>
+                <a href="georgia.html#hinesville">Hinesville</a>
+              </div>
+            </div>
+          </li>
           <li><a href="leasing.html">Leasing</a></li>
           <li><a href="index.html#gallery">Gallery</a></li>
           <li><a href="index.html#about">About</a></li>
@@ -274,7 +343,7 @@
   <main id="main" tabindex="-1" style="outline:none;">
   <section class="page-hero">
     <div class="page-hero__bg">
-      <img src="property-images/Rochester1.webp" alt="Rochester, New Hampshire" fetchpriority="high" decoding="async" />
+      <img src="Watercolor%20Brick%20Building.webp" alt="New Hampshire properties" fetchpriority="high" decoding="async" />
     </div>
     <div class="wrap page-hero__inner">
       <span class="eyebrow">New Hampshire</span>
