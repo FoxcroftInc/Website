@@ -1389,7 +1389,7 @@
     const mm = document.getElementById('mobileMenu');
     const menuToggle = document.getElementById('menuToggle');
     const mobileClose = document.getElementById('mobileClose');
-    const openMenu = () => { mm.classList.add('open'); menuToggle.setAttribute('aria-expanded', 'true'); mobileClose.focus(); document.body.style.overflow = 'hidden'; };
+    const openMenu = () => { document.body.style.overflow = 'hidden'; mm.classList.add('open'); menuToggle.setAttribute('aria-expanded', 'true'); mobileClose.focus({ preventScroll: true }); };
     const closeMenu = () => { mm.classList.remove('open'); menuToggle.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-controls', 'mobileMenu');
