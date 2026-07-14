@@ -234,8 +234,10 @@
     }
     .prop-card:hover { box-shadow: 0 20px 60px rgba(20,19,15,0.1); transform: translateY(-4px); }
     .prop-card__img { aspect-ratio: 4/3; overflow: hidden; position: relative; }
-    .prop-card__img img { position: absolute; left: 0; top: -4%; width: 100%; height: 108%; object-fit: cover; transform: translate3d(0, var(--pY, 0px), 0); transition: filter 1s var(--ease); }
-    .prop-card:hover .prop-card__img img { filter: brightness(1.05); }
+    /* zoom uses the standalone `scale` property, not `transform` — `transform` is
+       driven by the scroll parallax (--pY), so transitioning it would lag the parallax */
+    .prop-card__img img { position: absolute; left: 0; top: -4%; width: 100%; height: 108%; object-fit: cover; transform: translate3d(0, var(--pY, 0px), 0); scale: 1; transition: filter 1s var(--ease), scale .7s var(--ease); }
+    .prop-card:hover .prop-card__img img, .prop-card:focus-visible .prop-card__img img { filter: brightness(1.05); scale: 1.06; }
     .prop-card__body { padding: 28px 30px 32px; flex: 1; display: flex; flex-direction: column; }
     .prop-card__loc { font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--taupe); margin-bottom: 8px; }
     .prop-card__body h3 { font-size: 22px; margin-bottom: 10px; }

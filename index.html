@@ -482,14 +482,17 @@
     .card img {
       position: absolute; left: 0; top: -4%; width: 100%; height: 108%; object-fit: cover;
       transform: translate3d(0, var(--pY, 0px), 0);
-      transition: filter 1.1s var(--ease); filter: saturate(.92) brightness(.82);
+      /* zoom uses the standalone `scale` property, not `transform` — `transform` is
+         driven by the scroll parallax (--pY), so transitioning it would lag the parallax */
+      scale: 1;
+      transition: filter 1.1s var(--ease), scale .7s var(--ease); filter: saturate(.92) brightness(.82);
     }
     .card::after {
       content: ""; position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(20,19,15,.88) 0%, rgba(20,19,15,.15) 55%, transparent 100%);
       transition: opacity .6s var(--ease);
     }
-    .card:hover img { filter: saturate(1) brightness(.95); }
+    .card:hover img, .card:focus-within img { filter: saturate(1) brightness(.95); scale: 1.06; }
     .card__body { position: relative; z-index: 2; padding: 34px 32px; color: #fff; width: 100%; }
     .card__body .place { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.88); margin-bottom: 10px; display: block; text-shadow: 0 1px 10px rgba(0,0,0,.7); }
     .card__body h3 { font-size: 28px; margin-bottom: 12px; }
@@ -531,7 +534,7 @@
     .gallery { background: var(--ivory); }
     .grid-gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; grid-auto-rows: 200px; }
     .g-item { position: relative; overflow: hidden; cursor: pointer; background: var(--ink); }
-    .g-item img { position: absolute; left: 0; top: -4%; width: 100%; height: 108%; object-fit: cover; transform: translate3d(0, var(--pY, 0px), 0); transition: filter .6s var(--ease); filter: brightness(.92); }
+    .g-item img { position: absolute; left: 0; top: -4%; width: 100%; height: 108%; object-fit: cover; transform: translate3d(0, var(--pY, 0px), 0); scale: 1; transition: filter .6s var(--ease), scale .7s var(--ease); filter: brightness(.92); }
     .g-item::after {
       content: ""; position: absolute; inset: 0; background: rgba(20,19,15,.0); transition: background .5s var(--ease);
     }
@@ -543,7 +546,7 @@
     .g-item .plus::before, .g-item .plus::after { content: ""; position: absolute; background: #fff; }
     .g-item .plus::before { width: 24px; height: 1px; }
     .g-item .plus::after { width: 1px; height: 24px; }
-    .g-item:hover img { filter: brightness(1.04); }
+    .g-item:hover img, .g-item:focus-visible img { filter: brightness(1.04); scale: 1.06; }
     .g-item:hover::after { background: rgba(20,19,15,.42); }
     .g-item:hover .plus { opacity: 1; transform: scale(1); }
     /* spans */
