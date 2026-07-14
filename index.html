@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="google-site-verification" content="8ZsEi2lZXw9iwV8kbkQRSWnXhD5osj2JlWB1tVU40Go" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0a0907" />
 
@@ -551,9 +552,8 @@
     .g-c { grid-column: span 3; grid-row: span 1; }
     .g-d { grid-column: span 4; grid-row: span 1; }
     .g-e { grid-column: span 3; grid-row: span 1; }
-    .g-f { grid-column: span 3; grid-row: span 2; }
-    .g-g { grid-column: span 4; grid-row: span 1; }
-    .g-h { grid-column: span 5; grid-row: span 1; }
+    .g-g { grid-column: span 5; grid-row: span 1; }
+    .g-h { grid-column: span 7; grid-row: span 1; }
 
     /* lightbox */
     .lightbox {
@@ -858,8 +858,8 @@
       .card__body p { max-height: 120px; opacity: 1; }
       .card__body .more { opacity: 1; transform: none; }
       .grid-gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
-      .g-a,.g-b,.g-c,.g-d,.g-e,.g-f,.g-g,.g-h { grid-column: span 1; grid-row: span 1; }
-      .g-a, .g-f { grid-row: span 2; }
+      .g-a,.g-b,.g-c,.g-d,.g-e,.g-g,.g-h { grid-column: span 1; grid-row: span 1; }
+      .g-a { grid-row: span 2; }
       .form-row { grid-template-columns: 1fr; }
       .form-card .btn { width: 100%; }
       .foot__top { gap: 32px 40px; }
@@ -953,7 +953,7 @@
             </div>
           </li>
           <li><a href="leasing.html">Leasing</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <!-- <li><a href="#gallery">Gallery</a></li> -->
           <li><a href="#about">About</a></li>
           <li><a href="careers.html">Careers</a></li>
         </ul>
@@ -988,7 +988,7 @@
       </div>
     </div>
     <a href="leasing.html">Leasing</a>
-    <a href="#gallery">Gallery</a>
+    <!-- <a href="#gallery">Gallery</a> -->
     <a href="#about">About</a>
     <a href="careers.html">Careers</a>
     <a href="#contact">Contact</a>
@@ -1116,7 +1116,8 @@
   </section>
 
 
-  <!-- ========== GALLERY ========== -->
+  <!-- ========== GALLERY (HIDDEN pending client approval — to restore: delete the opening "<!--" below and the "-->" after this section's </section> ) ========== -->
+  <!--
   <section class="gallery pad" id="gallery">
     <div class="wrap">
       <div class="section-head section-head--center reveal">
@@ -1129,12 +1130,12 @@
         <div class="g-item g-c"><img src="property-images/House-116-Main-King.webp" alt="116 Main, Kingston" loading="lazy" decoding="async" /><span class="plus"></span></div>
         <div class="g-item g-d"><img src="property-images/207.225-Lincoln-Hingham-31.webp" alt="Lincoln Street, Hingham" loading="lazy" decoding="async" /><span class="plus"></span></div>
         <div class="g-item g-e"><img src="property-images/7.9-Central-Hingham-1.webp" alt="Central Street, Hingham" loading="lazy" decoding="async" /><span class="plus"></span></div>
-        <div class="g-item g-f"><img src="property-images/Port-B-112.114-Main-King.webp" alt="Main Street, Kingston" loading="lazy" decoding="async" /><span class="plus"></span></div>
         <div class="g-item g-g"><img src="property-images/7.9-Central-Hingham-2.webp" alt="Central Street, Hingham" loading="lazy" decoding="async" /><span class="plus"></span></div>
         <div class="g-item g-h"><img src="property-images/207.225-Lincoln-Hingham-21.webp" alt="Lincoln Street, Hingham" loading="lazy" decoding="async" /><span class="plus"></span></div>
       </div>
     </div>
   </section>
+  -->
 
   <!-- ========== QUOTE REVEAL ========== -->
   <section class="quote-reveal" aria-label="Our Mission">
@@ -1313,15 +1314,6 @@
   </div>
 
   <script>
-    // Build marker — bump the date/letter on every deploy, then verify on-device
-    // via Safari console or by viewing source. If the console doesn't show THIS
-    // string, you are testing a stale deploy and no test result is valid.
-    console.log('FC build 2026-07-05-L (ivory mobile nav restored, no floating menu button)');
-    // TEMP until the bands are confirmed fixed: visible build tag in the tab
-    // title so stale Netlify deploys are detectable on-device. Remove before
-    // client delivery.
-    document.title = document.title + ' [L]';
-
     // ---- Loader ----
     (function () {
       const loader = document.getElementById('loader');

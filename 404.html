@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Page Not Found | Foxcroft Inc.</title>
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@300;400;500;600&display=swap" />
+  <style>
+    :root{
+      --ink:#1c1b17; --ivory:#f8f5ef; --stone:#d8cfc0; --taupe:#6b6357; --green:#06180E;
+      --serif:"Marcellus",Georgia,"Times New Roman",serif;
+      --sans:"Jost",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:var(--sans); background:var(--ivory); color:var(--ink);
+      min-height:100vh; min-height:100svh; display:flex; flex-direction:column;
+      align-items:center; justify-content:center; text-align:center;
+      padding:40px 24px calc(40px + env(safe-area-inset-bottom,0px));
+    }
+    .logo{height:44px; width:auto; margin-bottom:48px;}
+    .eyebrow{
+      font-size:12px; letter-spacing:.26em; text-transform:uppercase;
+      color:var(--taupe); margin-bottom:20px;
+    }
+    h1{
+      font-family:var(--serif); font-weight:400;
+      font-size:clamp(40px,8vw,80px); line-height:1.04; margin-bottom:20px;
+    }
+    p{
+      font-size:clamp(15px,1.6vw,18px); font-weight:300; color:var(--taupe);
+      max-width:440px; line-height:1.7; margin-bottom:40px;
+    }
+    .actions{display:flex; flex-wrap:wrap; gap:14px; justify-content:center;}
+    .btn{
+      font-family:var(--sans); font-size:12px; letter-spacing:.14em; text-transform:uppercase;
+      font-weight:500; padding:14px 26px; text-decoration:none; transition:background .35s ease,color .35s ease;
+    }
+    .btn--solid{background:var(--green); color:var(--ivory);}
+    .btn--solid:hover{background:var(--ink);}
+    .btn--ghost{border:1px solid var(--stone); color:var(--ink);}
+    .btn--ghost:hover{background:var(--ink); color:var(--ivory); border-color:var(--ink);}
+  </style>
+</head>
+<body>
+  <a href="/" aria-label="Foxcroft Inc. home"><img class="logo" src="/Frame%206.svg" alt="Foxcroft Inc." /></a>
+  <span class="eyebrow">Error 404</span>
+  <h1>Page not found</h1>
+  <p>The page you are looking for has moved or no longer exists. Let us point you back in the right direction.</p>
+  <div class="actions">
+    <a class="btn btn--solid" href="/">Return home</a>
+    <a class="btn btn--ghost" href="/boston.html">View properties</a>
+    <a class="btn btn--ghost" href="/#contact">Contact us</a>
+  </div>
+</body>
+</html>

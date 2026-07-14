@@ -1,0 +1,25 @@
+# Netlify redirects — old WordPress URLs → new site (301 = permanent, passes SEO equity)
+# Any old URL NOT listed here falls through to the branded 404.html (which is correct
+# for pages that genuinely no longer exist — it tells Google to drop them).
+
+# --- CONFIRMED old URLs (found in Google's index) ---
+/new-hampshire       /new-hampshire.html          301
+/new-hampshire/      /new-hampshire.html          301
+/northborough        /boston.html#northborough    301
+/northborough/       /boston.html#northborough    301
+/contact-us          /#contact                    301
+/contact-us/         /#contact                    301
+/eastonbrockton      /boston.html#easton          301
+/eastonbrockton/     /boston.html#easton          301
+
+# --- BEST-GUESS for the dead SERP sitelinks (CONFIRM exact old slugs before trusting) ---
+/quincy              /boston.html#quincy          301
+/quincy/             /boston.html#quincy          301
+/hinesville          /georgia.html#hinesville     301
+/hinesville/         /georgia.html#hinesville     301
+/kingston            /boston.html#kingston        301
+/kingston/           /boston.html#kingston        301
+/boston              /boston.html                 301
+/boston/             /boston.html                 301
+/easton              /boston.html#easton          301
+/easton/             /boston.html#easton          301
