@@ -12,6 +12,7 @@ deploy/
 # Full-res source photos (converted to optimized WebP in property-images/)
 /184 Lincoln St..jpeg
 /207–225 Lincoln St..jpeg
+/aboutfoxcroftimage.jpg
 
 # Unused/duplicate images (not referenced by any live page)
 # Leading slash = repo root only, so this doesn't shadow property-images/Rochester1.webp (which IS used)
