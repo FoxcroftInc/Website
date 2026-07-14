@@ -776,14 +776,14 @@
          see IOS-LOADER-CHIN-BUG.md). The chin keeps showing the page underneath. */
       position: fixed; top: 0; left: 0; right: 0; bottom: env(safe-area-inset-bottom, 0px); z-index: 150;
       background: var(--ink);
-      transform: translateY(-100%);
+      transform: translateX(100%);
       visibility: hidden;
       display: flex; flex-direction: column;
       padding: calc(100px + env(safe-area-inset-top, 0px)) 40px 40px;
       overflow-y: auto;
-      transition: transform .55s var(--ease), visibility .55s var(--ease);
+      transition: transform .5s var(--ease), visibility .5s var(--ease);
     }
-    .mobile-menu.open { transform: translateY(0); visibility: visible; }
+    .mobile-menu.open { transform: translateX(0); visibility: visible; }
     .mobile-menu a { color: #fff; font-family: var(--serif); font-size: 30px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
     /* Properties accordion toggle */
     .mobile-menu .mm-properties {
