@@ -185,9 +185,9 @@
     .btn--solid { background: var(--ink); color: #fff; border-color: var(--ink); }
     .btn--solid:hover { background: var(--ink-soft); border-color: var(--ink-soft); }
     .btn--ghost-light { color: #fff; border-color: rgba(255,255,255,.55); }
-    .btn--ghost-light:hover { background: var(--ivory); color: var(--ink); border-color: var(--ivory); }
+    .btn--ghost-light:hover { background: var(--taupe); color: #fff; border-color: var(--taupe); }
     .btn--light { background: var(--ivory); color: var(--ink); border-color: var(--stone); }
-    .btn--light:hover { background: var(--green); color: #fff; border-color: var(--green); }
+    .btn--light:hover { background: var(--taupe); color: #fff; border-color: var(--taupe); }
 
     .link-cta {
       display: inline-flex; align-items: center; gap: 12px;
@@ -264,7 +264,7 @@
     .dropdown--mega a + a { border-top: 0; }
     .dropdown--mega a:hover { padding-left: 6px; }
     .dd-state {
-      color: var(--ink); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
+      color: var(--ink); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600;
       padding: 2px 0 10px; margin-bottom: 6px; border-bottom: 1px solid var(--stone);
     }
     .dd-state:hover { color: var(--brass); padding-left: 0; }
@@ -291,7 +291,7 @@
       font-size: 13px; line-height: 1;
     }
     .nav-cta:hover .nav-cta__arrow { width: 13px; opacity: 1; margin-right: 5px; }
-    .nav-cta:hover { background: var(--green); color: #fff; }
+    .nav-cta:hover { background: var(--taupe); color: #fff; }
 
     .menu-toggle { display: none; flex-direction: column; justify-content: center; gap: 6px; background: none; border: 0; cursor: pointer; padding: 11px 9px; min-width: 44px; min-height: 44px; }
     .menu-toggle span { width: 26px; height: 1.6px; background: var(--ink); transition: all .4s var(--ease); }
@@ -325,12 +325,8 @@
       }
       header.scrolled .brand-logo { filter: none; height: 38px; }
       header.scrolled .nav-links > li > a { color: var(--ink-soft); }
-      header.scrolled .dropdown { background: var(--ivory); box-shadow: 0 12px 40px rgba(0,0,0,.1); }
-      header.scrolled .dropdown::before { border-bottom-color: var(--ivory); }
-      header.scrolled .dropdown a { color: var(--taupe); }
-      header.scrolled .dropdown a:hover { color: var(--ink); }
-      header.scrolled .dropdown a + a { border-top-color: var(--stone); }
-      header.scrolled .dd-state { color: var(--ink); border-bottom-color: var(--stone); }
+      /* dropdown stays the dark (ink) treatment even when the header is scrolled/ivory */
+      header.scrolled .dropdown { box-shadow: 0 14px 40px rgba(0,0,0,.22); }
       header.scrolled .nav-cta { background: var(--green); color: #fff; }
     }
 
@@ -611,16 +607,16 @@
     .foot-link:hover { color: #fff; }
 
     /* ================= QUOTE REVEAL ================= */
-    .quote-reveal { background: var(--ink); padding: clamp(100px, 14vw, 180px) 0; overflow: hidden; }
-    .qr-eyebrow { color: rgba(255,255,255,.6); display: block; margin-bottom: 52px; }
-    .qr-eyebrow::before { background: rgba(255,255,255,.35); }
+    .quote-reveal { background: var(--ivory); padding: clamp(100px, 14vw, 180px) 0; overflow: hidden; }
+    .qr-eyebrow { color: var(--taupe); display: block; margin-bottom: 52px; }
+    .qr-eyebrow::before { background: var(--stone); }
     .qr-text {
       font-family: var(--serif);
       font-size: clamp(26px, 3.8vw, 52px);
       line-height: 1.42;
       max-width: 1020px;
     }
-    .qw { display: inline; color: #fff; opacity: .1; }
+    .qw { display: inline; color: var(--ink); opacity: .14; }
     .qr-cta {
       display: inline-flex; align-items: center; gap: 16px; margin-top: 64px;
       font-family: var(--sans); font-size: 11.5px; letter-spacing: .28em;
@@ -636,7 +632,7 @@
     .principles .eyebrow { color: rgba(255,255,255,.6); margin-bottom: clamp(36px, 5vw, 56px); }
     .principle {
       display: grid; grid-template-columns: minmax(180px, 300px) 1fr; gap: clamp(20px, 5vw, 70px);
-      align-items: baseline; padding: clamp(26px, 4vw, 44px) 0;
+      align-items: start; padding: clamp(26px, 4vw, 44px) 0;
       border-top: 1px solid rgba(255,255,255,.16);
     }
     .principle:last-child { border-bottom: 1px solid rgba(255,255,255,.16); }
@@ -692,6 +688,8 @@
     .foot__col h3 { color: var(--ivory); font-size: 17px; margin-bottom: 18px; letter-spacing: .05em; font-weight: 500; }
     .foot__col ul { list-style: none; columns: 2; column-gap: 30px; }
     .foot__col ul li { font-size: 14px; padding: 4px 0; letter-spacing: .03em; }
+    .foot__col ul li a { color: inherit; text-decoration: none; transition: color .3s var(--ease); }
+    .foot__col ul li a:hover { color: #fff; }
     .foot__mission { max-width: 340px; font-size: 14px; line-height: 1.8; }
     .foot__bottom { display: flex; justify-content: space-between; align-items: center; padding: 24px 0 calc(24px + env(safe-area-inset-bottom, 0px)); font-size: 12px; letter-spacing: .05em; flex-wrap: wrap; gap: 10px; }
     .foot__bottom .brass { color: var(--brass); }
@@ -1221,18 +1219,18 @@
         <div class="foot__col">
           <h3>Our Regions</h3>
           <ul>
-            <li>Boston</li>
-            <li>Brockton</li>
-            <li>Easton</li>
-            <li>Hingham</li>
-            <li>Hinesville, GA</li>
-            <li>Holbrook</li>
-            <li>Kingston</li>
-            <li>Northborough</li>
-            <li>Quincy</li>
-            <li>Rochester, NH</li>
-            <li>Watertown</li>
-            <li>West Roxbury</li>
+            <li><a href="boston.html#boston">Boston</a></li>
+            <li><a href="boston.html#brockton">Brockton</a></li>
+            <li><a href="boston.html#easton">Easton</a></li>
+            <li><a href="boston.html#hingham">Hingham</a></li>
+            <li><a href="georgia.html#hinesville">Hinesville, GA</a></li>
+            <li><a href="boston.html">Holbrook</a></li>
+            <li><a href="boston.html#kingston">Kingston</a></li>
+            <li><a href="boston.html#northborough">Northborough</a></li>
+            <li><a href="boston.html#quincy">Quincy</a></li>
+            <li><a href="new-hampshire.html#rochester">Rochester, NH</a></li>
+            <li><a href="boston.html#watertown">Watertown</a></li>
+            <li><a href="boston.html">West Roxbury</a></li>
           </ul>
         </div>
 

@@ -137,7 +137,7 @@
     .dropdown--mega a + a { border-top: 0; }
     .dropdown--mega a:hover { padding-left: 6px; }
     .dd-state {
-      color: var(--ink); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; font-weight: 700;
+      color: var(--ink); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; font-weight: 600;
       padding: 2px 0 10px; margin-bottom: 6px; border-bottom: 1px solid var(--stone);
     }
     .dd-state:hover { color: var(--brass); padding-left: 0; }
@@ -161,7 +161,7 @@
       font-size: 13px; line-height: 1;
     }
     .nav-cta:hover .nav-cta__arrow { width: 13px; opacity: 1; margin-right: 5px; }
-    .nav-cta:hover { background: #fff; color: var(--green); }
+    .nav-cta:hover { background: var(--taupe); color: #fff; }
     .menu-toggle { display: none; flex-direction: column; justify-content: center; gap: 6px; background: none; border: 0; cursor: pointer; padding: 11px 9px; min-width: 44px; min-height: 44px; }
     .menu-toggle span { width: 26px; height: 1.6px; background: var(--ink); transition: all .4s var(--ease); }
 
@@ -225,17 +225,18 @@
     .prop-card:hover .prop-card__cta::after { width: 44px; }
 
     /* ---- CTA strip ---- */
-    .cta-strip { background: var(--green); color: #fff; padding: clamp(60px, 8vw, 100px) 0; text-align: center; }
+    /* light strip: sits between the ivory content above and the ink footer below,
+       so the old green-against-brown-footer seam is gone */
+    .cta-strip { background: var(--cream); color: var(--ink); padding: clamp(60px, 8vw, 100px) 0; text-align: center; }
     .cta-strip h2 { font-size: clamp(26px, 3.5vw, 42px); margin-bottom: 14px; }
-    .cta-strip p { color: rgba(255,255,255,.75); max-width: 480px; margin: 0 auto 32px; }
+    .cta-strip p { color: var(--taupe); max-width: 480px; margin: 0 auto 32px; }
     .btn {
       display: inline-block; font-family: var(--sans); font-size: 12.5px; letter-spacing: .22em;
       text-transform: uppercase; font-weight: 500; padding: 16px 34px;
       border: 1px solid var(--brass); color: var(--ink); background: transparent; cursor: pointer;
       transition: background .4s var(--ease), color .4s var(--ease), border-color .4s var(--ease);
     }
-    .btn--ghost-light { color: #fff; border-color: rgba(255,255,255,.55); }
-    .btn--ghost-light:hover { background: var(--ivory); color: var(--ink); border-color: var(--ivory); }
+    .btn:hover { background: var(--taupe); color: #fff; border-color: var(--taupe); }
 
     /* ---- Footer ---- */
     footer.foot { background: var(--ink); color: rgba(255,255,255,.76); }
@@ -244,6 +245,8 @@
     .foot__col h3 { color: var(--ivory); font-size: 17px; margin-bottom: 18px; letter-spacing: .05em; font-weight: 500; }
     .foot__col ul { list-style: none; columns: 2; column-gap: 30px; }
     .foot__col ul li { font-size: 14px; padding: 4px 0; letter-spacing: .03em; }
+    .foot__col ul li a { color: inherit; text-decoration: none; transition: color .3s var(--ease); }
+    .foot__col ul li a:hover { color: #fff; }
     .foot__mission { max-width: 340px; font-size: 14px; line-height: 1.8; }
     .foot__bottom { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; font-size: 12px; letter-spacing: .05em; flex-wrap: wrap; gap: 10px; }
     .foot__bottom .brass { color: var(--brass); }
@@ -315,7 +318,7 @@
             </div>
           </li>
           <li><a href="leasing.html">Leasing</a></li>
-          <li><a href="index.html#gallery">Gallery</a></li>
+          <!-- <li><a href="index.html#gallery">Gallery</a></li> -->
           <li><a href="index.html#about">About</a></li>
           <li><a href="careers.html">Careers</a></li>
         </ul>
@@ -332,7 +335,7 @@
     <a href="index.html">Home</a>
     <a href="index.html#portfolio">Properties</a>
     <a href="leasing.html">Leasing</a>
-    <a href="index.html#gallery">Gallery</a>
+    <!-- <a href="index.html#gallery">Gallery</a> -->
     <a href="index.html#about">About</a>
     <a href="careers.html">Careers</a>
     <a href="index.html#contact">Contact</a>
@@ -391,7 +394,7 @@
     <div class="wrap">
       <h2>Interested in a space?</h2>
       <p>Reach out directly and you'll speak with a decision-maker, not a call center.</p>
-      <a href="index.html#contact" class="btn btn--ghost-light">Contact Foxcroft</a>
+      <a href="index.html#contact" class="btn">Contact Foxcroft</a>
     </div>
   </section>
 
@@ -410,10 +413,10 @@
         <div class="foot__col">
           <h3>Our Regions</h3>
           <ul>
-            <li>Boston</li><li>Brockton</li><li>Easton</li><li>Hingham</li>
-            <li>Hinesville, GA</li><li>Holbrook</li><li>Kingston</li>
-            <li>Northborough</li><li>Quincy</li><li>Rochester, NH</li>
-            <li>Watertown</li><li>West Roxbury</li>
+            <li><a href="boston.html#boston">Boston</a></li><li><a href="boston.html#brockton">Brockton</a></li><li><a href="boston.html#easton">Easton</a></li><li><a href="boston.html#hingham">Hingham</a></li>
+            <li><a href="georgia.html#hinesville">Hinesville, GA</a></li><li><a href="boston.html">Holbrook</a></li><li><a href="boston.html#kingston">Kingston</a></li>
+            <li><a href="boston.html#northborough">Northborough</a></li><li><a href="boston.html#quincy">Quincy</a></li><li><a href="new-hampshire.html#rochester">Rochester, NH</a></li>
+            <li><a href="boston.html#watertown">Watertown</a></li><li><a href="boston.html">West Roxbury</a></li>
           </ul>
         </div>
         <div class="foot__col">
