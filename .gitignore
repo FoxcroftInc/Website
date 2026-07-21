@@ -31,3 +31,6 @@ deploy/
 PPEditorialNew-Italic.otf
 PPEditorialNew-Regular.otf
 PPEditorialNew-Ultrabold.otf
+
+# Local hero redesign sandbox — never deploy
+/hero-experiment.html
